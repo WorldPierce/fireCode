@@ -15,3 +15,13 @@ public static String reverseString(String str){
     
     return outputString;
 }
+
+
+//review solution
+
+public static String reverseString(String str){
+    if(str == null || str.length() <= 1) {
+        return str;
+    }
+    return new StringBuilder(str).reverse().toString();
+}
