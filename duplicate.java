@@ -45,3 +45,20 @@ public static String duplicate3(int[] numbers){
     
     return list.toString();
 }
+
+
+public static String duplicate4(int[] numbers){
+    Arrays.sort(numbers);
+    ArrayList<Integer> dups = new ArrayList<>();
+    for(int i = 0; i < numbers.length - 1; i++) {
+        if(numbers[i] == numbers[i + 1]) {
+            dups.add(numbers[i]);
+            i++;
+            while(i < numbers.length - 1 && numbers[i] == numbers[i + 1]) {
+                i++;
+            }
+        }
+    }
+    return dups.toString();
+    
+}
