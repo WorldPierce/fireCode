@@ -4,19 +4,17 @@
 
 
 public static String duplicate(int[] numbers){
+    if(numbers == null) return null;
+    if(numbers.length <= 1) return "";
+    ArrayList<Integer> doubles = new ArrayList<>();
     Arrays.sort(numbers);
-    ArrayList<Integer> dup = new ArrayList<>();
-    for(int i = 0; i < numbers.length - 1; i++){
-        if(numbers[i] == numbers[i + 1]){
-            i++;
-            dup.add(numbers[i]);
-            int num = numbers[i];
-            while(i < numbers.length && num == numbers[i + 1]){
-                i++;
-            }
+    for(int i = 0; i < numbers.length - 1; i++) {
+        if(numbers[i] == numbers[i+1] && !doubles.contains(numbers[i])) {
+            doubles.add(numbers[i]);
         }
     }
-    return dup.toString();
+    return doubles.toString();
+    
 }
 
 public static String duplicate2(int[] numbers){
@@ -35,7 +33,7 @@ public static String duplicate2(int[] numbers){
 
 
 public static String duplicate3(int[] numbers){
-     // Add your code below this line. Do not modify any other code.
+     // TreeSet can not have duplicates
     Set<Integer> map = new HashSet<>();
     Set<Integer> list = new TreeSet<>();
     for (int num : numbers) {

@@ -24,3 +24,17 @@ public static Boolean binarySearch(int[] arr, int n){
         return binarySearch(Arrays.copyOfRange(arr, arr.length/2 + 1, arr.length), n);
     }
 }
+
+public static Boolean binarySearch(int[] arr, int n){
+    if(arr == null || arr.length < 1) return false;
+    int mid = arr[arr.length/2];
+    if(mid == n) return true;
+ 
+    if(mid > n) {
+        return binarySearch(Arrays.copyOfRange(arr, 0, arr.length/2 - 1),n);
+    }
+    else {
+        return binarySearch(Arrays.copyOfRange(arr, arr.length/2 + 1, arr.length),n);
+    }
+    
+}
