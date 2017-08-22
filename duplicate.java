@@ -60,3 +60,14 @@ public static String duplicate4(int[] numbers){
     return dups.toString();
     
 }
+
+public static String duplicate(int[] numbers){
+    TreeSet<Integer> findDup = new TreeSet<>();
+    TreeSet<Integer> duplicates = new TreeSet<>();
+    for(int i = 0; i < numbers.length; i++) {
+        if(findDup.add(numbers[i]) == false) {
+            duplicates.add(numbers[i]);
+        }
+    }
+    return duplicates.toString();
+}

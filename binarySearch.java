@@ -38,3 +38,11 @@ public static Boolean binarySearch(int[] arr, int n){
     }
     
 }
+
+public static Boolean binarySearch(int[] arr, int n){
+    if(arr.length == 0) return false;
+    int mid = arr[arr.length/2];
+    if(mid == n) return true;
+    else if(mid > n) return binarySearch(Arrays.copyOfRange(arr, 0, arr.length/2),n);
+    else return binarySearch(Arrays.copyOfRange(arr, arr.length/2 + 1, arr.length),n);
+}
